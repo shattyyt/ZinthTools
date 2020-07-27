@@ -5,6 +5,7 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 modId="zt" #mandatory
 version="1.15.2-0.1" #mandatory
 displayName="Zinth Tools" #mandatory
+credits="Vectorwing for heavily inspiring me to make my own mod"
 description='''
 This is a mod that adds new tools!
 '''
