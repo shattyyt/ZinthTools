@@ -2,20 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "pattern":
   [
-    "",
-    "",
-    ""
+    "zz ",
+    "zz ",
+    "   "
   ],
   "key":
   {
-    "x":
+    "z":
     {
-      "item": "MOD_ID:ITEM"
+      "item": "zt:zinthite_ingot"
     }
   },
   "result":
   {
-    "item": "MOD_ID:ITEM",
+    "item": "zt:zinthite_block",
     "count": 1
   }
 }

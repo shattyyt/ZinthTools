@@ -5,8 +5,10 @@ import com.zinthite.zinthtools.blocks.BlockItemBase;
 import com.zinthite.zinthtools.blocks.ZinthiteBlock;
 import com.zinthite.zinthtools.blocks.ZinthiteOre;
 import com.zinthite.zinthtools.items.ItemBase;
+import com.zinthite.zinthtools.tools.ZTItemTier;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -20,8 +22,10 @@ public class RegistryHandler {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
-
     public static final RegistryObject<Item> ZINTHITE = ITEMS.register("zinthite", ItemBase::new);
+
+    public static final RegistryObject<SwordItem> ZINTH_SWORD = ITEMS.register("zinth_sword", () ->
+            new SwordItem(ZTItemTier.ZINTHITE, 3, -2.0f, new Item.Properties().group(ZT.TAB)));
 
     public static final RegistryObject<Block> ZINTHITE_BLOCK = BLOCKS.register("zinthite_block", ZinthiteBlock::new);
     public static final RegistryObject<Block> ZINTHITE_ORE = BLOCKS.register("zinthite_ore", ZinthiteOre::new);
