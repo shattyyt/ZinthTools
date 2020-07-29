@@ -9,7 +9,7 @@ import java.util.function.Supplier;
     public enum ZTItemTier implements IItemTier {
 
     ZINTHITE(3, 3560, 12.0f, 6.0f, 30, () -> {
-        return Ingredient.fromItems(RegistryHandler.ZINTH_SWORD.get());
+        return Ingredient.fromItems(RegistryHandler.ZINTHITE.get());
     });
 
     private final int harvestLevel;
