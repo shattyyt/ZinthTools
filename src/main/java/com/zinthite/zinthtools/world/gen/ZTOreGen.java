@@ -19,8 +19,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(modid = ZT.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-
-
 public class ZTOreGen {
 
     public static OreFeatureConfig.FillerBlockType END_STONE = OreFeatureConfig.FillerBlockType.create("END_STONE",
@@ -30,7 +28,7 @@ public class ZTOreGen {
     public static void generateOres(FMLLoadCompleteEvent event) {
         for (Biome biome : ForgeRegistries.BIOMES) {
             if(biome.getCategory() == Biome.Category.THEEND && biome != Biomes.THE_END) {
-                genOres(biome, 20, 0, 30, 5, END_STONE, RegistryHandler.ZINTHITE_ORE.get().getDefaultState(), 5);
+                genOres(biome, 4, 0, 0, 30, END_STONE, RegistryHandler.ZINTHITE_ORE.get().getDefaultState(), 5);
             }
 
         }
