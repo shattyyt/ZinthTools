@@ -1,12 +1,14 @@
 package com.zinthite.zinthtools.util;
 
 import com.zinthite.zinthtools.ZT;
+import com.zinthite.zinthtools.armor.ZTMaterialTier;
 import com.zinthite.zinthtools.blocks.BlockItemBase;
 import com.zinthite.zinthtools.blocks.ZinthiteBlock;
 import com.zinthite.zinthtools.blocks.ZinthiteOre;
 import com.zinthite.zinthtools.items.ItemBase;
 import com.zinthite.zinthtools.tools.ZTItemTier;
 import net.minecraft.block.Block;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -34,9 +36,18 @@ public class RegistryHandler {
     public static final RegistryObject<HoeItem> ZINTH_HOE= ITEMS.register("zinth_hoe", () ->
             new HoeItem(ZTItemTier.ZINTHITE, -2, new Item.Properties().group(ZT.TAB)));
 
-    public static final RegistryObject<Block> ZINTHITE_BLOCK = BLOCKS.register("zinthite_block.json", ZinthiteBlock::new);
+    public static final RegistryObject<ArmorItem> ZINTH_HELMET = ITEMS.register("zinth_helmet", () ->
+            new ArmorItem(ZTMaterialTier.ZINTHITE, EquipmentSlotType.HEAD, new Item.Properties().group(ZT.TAB)));
+    public static final RegistryObject<ArmorItem> ZINTH_CHESTPLATE = ITEMS.register("zinth_chestplate", () ->
+            new ArmorItem(ZTMaterialTier.ZINTHITE, EquipmentSlotType.CHEST, new Item.Properties().group(ZT.TAB)));
+    public static final RegistryObject<ArmorItem> ZINTH_LEGGINGS = ITEMS.register("zinth_leggings", () ->
+            new ArmorItem(ZTMaterialTier.ZINTHITE, EquipmentSlotType.LEGS, new Item.Properties().group(ZT.TAB)));
+    public static final RegistryObject<ArmorItem> ZINTH_BOOTS = ITEMS.register("zinth_boots", () ->
+            new ArmorItem(ZTMaterialTier.ZINTHITE, EquipmentSlotType.FEET, new Item.Properties().group(ZT.TAB)));
+
+    public static final RegistryObject<Block> ZINTHITE_BLOCK = BLOCKS.register("zinthite_block", ZinthiteBlock::new);
     public static final RegistryObject<Block> ZINTHITE_ORE = BLOCKS.register("zinthite_ore", ZinthiteOre::new);
 
-    public static final RegistryObject<Item> ZINTHITE_BLOCK_ITEM = ITEMS.register("zinthite_block.json", () -> new BlockItemBase(ZINTHITE_BLOCK.get()));
+    public static final RegistryObject<Item> ZINTHITE_BLOCK_ITEM = ITEMS.register("zinthite_block", () -> new BlockItemBase(ZINTHITE_BLOCK.get()));
     public static final RegistryObject<Item> ZINTHITE_ORE_ITEM = ITEMS.register("zinthite_ore", () -> new BlockItemBase(ZINTHITE_ORE.get()));
 }
